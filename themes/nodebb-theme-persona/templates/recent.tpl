@@ -16,26 +16,13 @@
                 <div class="alert alert-warning hide" id="new-topics-alert"></div>
             </a>
         </div>
-
-      
+        
     <div class="btn-group pull-right bottom-sheet">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-
-           
-
                 <span class="visible-sm-inline visible-md-inline visible-lg-inline">All Tags</span><span class="visible-xs-inline"><i class="fa fa-fw {selectedFilter.icon}"></i></span> <span class="caret"></span>
-
-                
-    
             </button>
-           
 
                <ul component="category/list" class="dropdown-menu category-dropdown-menu" role="menu">
-            
-                   
-                        
-                        
-                        
                         <div class="tags">
                             <!-- IF displayTagSearch -->
                             <!-- IF tags.length -->
@@ -64,24 +51,12 @@
                                 </div>
                             </div>
                         </div>
-                        
-
-                    
-                     
-                    
-                    
-
-                
 
     <li role="presentation" class="category" data-all="all">
          <a role="menu-item" href="{config.relative_path}/tags/{tags.valueEncoded}" data-value="{tags.valueEscaped}"><span class="tag-item tag-class-{tags.class}" data-tag="{tags.valueEscaped}">{tags.valueEscaped}</span><span class="tag-topic-count human-readable-number" title="{tags.score}">{tags.score}</span></a>
          </li>
 </ul> 
-            
-    
-
 </div>
-
 
         <div class="btn-group pull-right">
         <!-- IMPORT partials/category/tools.tpl -->
@@ -100,9 +75,6 @@
                 </li>
                 {{{end}}}
             </ul>
-
-            
-
         </div>
     </div>
 
