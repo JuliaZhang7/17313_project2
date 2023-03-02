@@ -301,6 +301,22 @@ describe('Post\'s', () => {
             assert.equal(hasBookmarked[0], false);
         });
     });
+    
+    describe('resolving', () => {
+        it('should resolve a post', async () => {
+            const data = await apiPosts.resolve({ uid: voterUid }, { pid: postData.pid, room_id: `topic_${postData.tid}` });
+            assert.equal(data.isResolved, true);
+            const hasResolved = await posts.hasResolved(postData.pid, voterUid);
+            assert.equal(hasResolved, true);
+        });
+
+        it('should unresolve a post', async () => {
+            const data = await apiPosts.unresolve({ uid: voterUid }, { pid: postData.pid, room_id: `topic_${postData.tid}` });
+            assert.equal(data.isResolved, false);
+            const hasResolved = await posts.hasResolved([postData.pid], voterUid);
+            assert.equal(hasResolved[0], false);
+        });
+    });
 
     describe('post tools', () => {
         it('should error if data is invalid', (done) => {
