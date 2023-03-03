@@ -39,7 +39,7 @@ module.exports = function (Posts) {
                 yield database_1.default.sortedSetRemove(`uid:${uid}:resolve`, pid);
             }
             // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-            yield database_1.default[isResolving ? 'setAdd' : 'setRemove'](`pid:${pid}:users_resolved`, uid);
+            yield database_1.default[isResolving ? 'setAdd' : 'setRemove'](`pid:${pid}:users_bresolved`, uid);
             yield plugins_1.default.hooks.fire(`action:post.${type}`, {
                 pid: pid,
                 uid: uid,
@@ -59,7 +59,7 @@ module.exports = function (Posts) {
     };
     Posts.unresolve = function (pid, uid) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield toggleResolve('unresolve', pid, uid);
+            return toggleResolve('unresolve', pid, uid);
         });
     };
     Posts.hasResolved = function (pid, uid) {
@@ -70,11 +70,13 @@ module.exports = function (Posts) {
             if (Array.isArray(pid)) {
                 const sets = pid.map(pid => `pid:${pid}:users_resolved`);
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-                const returnBool = yield database_1.default.isMemberOfSets(sets, uid);
+                const returnBool = database_1.default.isMemberOfSets(sets, uid);
                 return returnBool;
             }
             // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-            const returnVal = yield database_1.default.isSetMember(`pid:${pid}:users_resolved`, uid);
+            const returnVal = database_1.default.isSetMember(`pid:${pid}:users_resolved`, uid);
+            console.log('ahhhhhhhhhhhhhhhhhhhhhhhhhhh');
+            console.log(typeof Posts.hasResolved);
             return returnVal;
         });
     };
