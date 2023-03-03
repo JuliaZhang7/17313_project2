@@ -64,6 +64,9 @@
 
         <!-- IMPORT partials/category-filter-right.tpl -->
 
+         <!-- IMPORT partials/tags-filter-right.tpl -->
+       
+
         <div class="btn-group pull-right bottom-sheet <!-- IF !filters.length -->hidden<!-- ENDIF !filters.length -->">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                 <span class="visible-sm-inline visible-md-inline visible-lg-inline">{selectedFilter.name}</span><span class="visible-xs-inline"><i class="fa fa-fw {selectedFilter.icon}"></i></span> <span class="caret"></span>
