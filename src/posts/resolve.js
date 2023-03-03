@@ -14,7 +14,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 const database_1 = __importDefault(require("../database"));
 const plugins_1 = __importDefault(require("../plugins"));
 module.exports = function (Posts) {
-    console.log('print togggggggle resolve');
     function toggleResolve(type, pid, uid) {
         return __awaiter(this, void 0, void 0, function* () {
             if (parseInt(uid, 10) <= 0) {
