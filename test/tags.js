@@ -16,14 +16,13 @@ describe('Tags', () => {
         topics.createEmptyTag();
     });
 
-    it ('should check tag on certain post', (done) =>{
+    it('should check tag on certain post', (done) => {
         topics.post({
-            uid: voterUid,
-            cid: cid,
+            uid: 'Admin',
+            cid: 0,
             title: 'topic to edit',
             content: 'A post to edit',
             tags: ['nodebb'],
         });
     });
-
 });
