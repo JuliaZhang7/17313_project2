@@ -20,6 +20,7 @@ The automated tests for the feature are stored in test/posts.js. The tests valid
 ## Tag Filtering using Dropdown Menu:
 To filter through topics by tag on the ‘Recent’ tab, click on the button that says ‘All Tags’ on the very right side of the navigation bar. It will reveal a dropdown menu that shows all created tags. If you have not created any tags, a message will show, stating that no tags have been created. A button at the bottom of the dropdown menu, when clicked, will take you to the ‘Tags’ tab.
 
+Automated tests can be found within the tests/tags.js file. Which tests the basic functionality of tags and its features.
 
 ## Poll Plugin Usage:
 The nodebb-plugin-poll-git in the repository is a plugin that provides a poll function for new posts. It allows poll creators to set options, number of votes per person, and the end date of poll. It allows viewers to vote and provides visualized statistics for poll results.
