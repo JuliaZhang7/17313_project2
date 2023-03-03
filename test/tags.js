@@ -13,7 +13,7 @@ describe('Tags', () => {
     let tagsObj;
 
     it('should add tag to url of all tag', (done) => {
-
+        
     });
 
     it('should create a new tag', (done) => {
