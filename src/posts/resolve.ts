@@ -1,4 +1,3 @@
-'use strict';
 import db from '../database';
 import plugins from '../plugins';
 
@@ -12,13 +11,6 @@ interface PostObject {
 }
 
 export = function (Posts:PostObject) {
-
-    Posts.resolve = async function (pid:number, uid:string) {
-        return await toggleResolve('resolve', pid, uid);
-    };
-    Posts.unresolve = async function (pid:number, uid:string) {
-        return await toggleResolve('unresolve', pid, uid);
-    };
     async function toggleResolve(type:string, pid:number, uid:string) {
         if (parseInt(uid, 10) <= 0) {
             throw new Error('[[error:not-logged-in]]');
@@ -57,7 +49,12 @@ export = function (Posts:PostObject) {
             isResolved: isResolving,
         };
     }
-
+    Posts.resolve = async function (pid:number, uid:string) {
+        return await toggleResolve('resolve', pid, uid);
+    };
+    Posts.unresolve = async function (pid:number, uid:string) {
+        return await toggleResolve('unresolve', pid, uid);
+    };
     Posts.hasResolved = async function (pid:number | number[], uid:string) {
         if (parseInt(uid, 10) <= 0) {
             return Array.isArray(pid) ? pid.map(() => false) : false;
@@ -70,7 +67,6 @@ export = function (Posts:PostObject) {
             return returnBool;
         }
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-        
         const returnVal:boolean = await db.isSetMember(`pid:${pid}:users_resolved`, uid) as boolean;
         return returnVal;
     };
