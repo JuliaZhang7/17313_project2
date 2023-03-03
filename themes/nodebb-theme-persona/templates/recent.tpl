@@ -21,10 +21,8 @@
         <!-- IMPORT partials/category/tools.tpl -->
         </div>
 
+        <!-- IMPORT partials/tags-filter-right.tpl -->
         <!-- IMPORT partials/category-filter-right.tpl -->
-
-         <!-- IMPORT partials/tags-filter-right.tpl -->
-       
 
         <div class="btn-group pull-right bottom-sheet <!-- IF !filters.length -->hidden<!-- ENDIF !filters.length -->">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">

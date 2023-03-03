@@ -1,8 +1,4 @@
-<ul component="tag/list" class="dropdown-menu tag-dropdown-menu" role="menu">
-    {{{each tags}}}
-        <h3 class="pull-left tag-container">
-            <a href="{config.relative_path}/tags/{tags.valueEncoded}" data-value="{tags.valueEscaped}"><span class="tag-item tag-class-{tags.class}" data-tag="{tags.valueEscaped}">{tags.valueEscaped}</span><span class="tag-topic-count human-readable-number" title="{tags.score}">{tags.score}</span></a>
-        </h3>
-    {{{end}}}
-</ul>
+<div component="tag-selector" class="btn-group pull-right tag-dropdown-container bottom-sheet">
+   <!-- IMPORT partials/tags-filter-content.tpl -->
+</div>
 
