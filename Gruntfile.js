@@ -35,6 +35,9 @@ module.exports = function (grunt) {
         watch: {},
     });
 
+    // // Load retire js grunt file
+    grunt.loadNpmTasks('grunt-retire');
+
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('default', ['watch']);
